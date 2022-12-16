@@ -1,0 +1,38 @@
+<div class="container" style="width: 700px;">
+    <!-- show errmsg -->
+    <div *ngIf="errmsg" class="mt-4 alert alert-danger alert-dismissible fade show" role="alert">
+        <strong>Error!</strong> {{errmsg}}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+
+    <!-- show errmsg -->
+    <div *ngIf="succmsg" class="mt-4 alert alert-success alert-dismissible fade show" role="alert">
+        <strong>Success!</strong> {{succmsg}}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+
+    <table class="mt-4" id="tables">
+        <thead>
+            <tr>
+                <th scope="col">id</th>
+                <th scope="col">Dev Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Mobile</th>
+                <th scope="col">Edits</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let dev of readData">
+                <th scope="row">{{dev.id}}</th>
+                <td>{{dev.name}}</td>
+                <td>{{dev.email}}</td>
+                <td>{{dev.mobile}}</td>
+                <td>
+                    <button class="btn-sm btn btn-danger" (click)="deleteId(dev.id)">Delete</button>
+                    &nbsp;
+                    <a [routerLink]="['/create', dev.id]" class="btn btn-sm btn-success">update</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

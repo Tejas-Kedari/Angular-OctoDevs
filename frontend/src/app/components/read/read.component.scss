@@ -1,0 +1,29 @@
+#tables{
+    border-collapse: collapse;
+
+    th,
+    td{
+        padding: 15px 6px;
+    }
+
+    thead{
+        background: linear-gradient(45deg, rgb(95, 95, 255), rgb(46, 46, 245));
+        box-shadow: 2px 3px 5px rgba(0, 0, 0, .2);
+        color: #FFFFFF;
+    }
+
+    tbody{
+        background: #FFFFFF;
+        
+        tr{
+            transition: all .3s ease;
+            &:hover{
+                transform: scale(1.05);
+            }
+        }
+
+        box-shadow: 3px 3px 5px rgba(0, 0, 0, .2);
+    }
+}
+
+
